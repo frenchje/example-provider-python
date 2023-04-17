@@ -1,10 +1,12 @@
+from datetime import datetime
+
 from fastapi import FastAPI, Response
 
 app = FastAPI()
 
 catalog = [
-  { "id": "10", "type": "CREDIT_CARD", "name": "Buy stuff without actually having money" },
-  { "id": "1", "type": "LOAD", "name": "no interest forever loan (via parents fund)" }
+  {"id": "10", "type": "CREDIT_CARD", "name": "Buy stuff without actually having money", "last_date": datetime.now()},
+  {"id": "1", "type": "LOAD", "name": "no interest forever loan (via parents fund)", "last_date": datetime.now()}
 ]
 
 @app.get("/products")
